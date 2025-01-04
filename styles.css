@@ -1,0 +1,317 @@
+/*  Inicio de Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;     /* para todo el body  */
+    color: #ffffff;
+    background-color: #0D1B2A;
+    scroll-behavior: smooth;     /* para todo el body hace una transicion suave hacia la otra seccion */
+  }
+
+  /*  final de Estilos generales */
+
+  /* inicio clases titulo subtitulo */
+
+  .titles-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    min-height: 50vh; 
+    /* controla el alto de visualizacion del container  */
+    text-align: center; 
+  }
+  
+
+    /* final clases titulo subtitulo */
+
+  /*  Inicio de Estilos hero 1 */
+
+  .hero-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    max-height: 20%;
+  }
+  
+  .hero-parallax {
+    background-image: url('./images/image.png'); 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .hero-content {
+    padding: 20px;
+  }
+  
+  .hero-title {
+    font-size: 2rem; 
+    font-weight: bold;
+    color: #FFD700; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1.5s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem; 
+    margin: 20px 0;
+    color: #ffffff; 
+    animation: fadeIn 2s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+  }
+  
+  .hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.9rem; 
+    color: #0D1B2A;
+    background: #FFD700;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    animation: fadeIn 2.5s ease-in-out;
+  }
+  
+  .hero-button:hover {
+    background: #F4A261; 
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media screen and (min-width: 600px) {
+    .hero-title {
+      font-size: 2.5rem; /* Aumenta el tamaño en tablets */
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+    .hero-button {
+      font-size: 1rem;
+      padding: 12px 25px; /* Botón más grande */
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .hero-title {
+      font-size: 3rem; /* Tamaño grande para desktops */
+    }
+    .hero-subtitle {
+      font-size: 1.5rem;
+    }
+    .hero-button {
+      font-size: 1.2rem;
+      padding: 15px 30px;
+    }
+  }
+
+/*  final de Estilos hero 1 */
+
+/*  Inicio de Estilos hero 2*/
+
+/* Hero 2 - Slideshow */
+.hero-container-unique {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #2D2A32; 
+  }
+  
+  .slideshow-unique {
+    background-image: url('./images/fondo.png'); 
+    background-size: cover; /* Asegura que la imagen cubra toda el área */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen al viewport */
+    background-position: center; /* Centra la imagen en la pantalla */
+    position: absolute;
+    display: flex;
+    justify-content: center; /* garantiza que los sliders esten a la misma altura del contenedor flex */
+
+  }
+  
+  .slide-unique {
+    flex: 0 0 100%;
+    height: 70%;
+    transition: transform 1s ease-in-out;
+    filter: brightness(70%); /* bajar un poco el brillo de la imagen  */
+  }
+  
+  .slide-unique video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  .slideshow-overlay-unique {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .slideshow-overlay-unique h1 {
+    font-size: 1.5rem;
+    color: #E9C46A;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .slideshow-overlay-unique p {
+    font-size: 0.9rem;
+    color: #F4A261;
+    margin: 10px 0;
+  }
+  
+  .slideshow-overlay-unique .hero-button-unique {
+    padding: 8px 15px;
+    background-color: #264653;
+    color: #E9C46A;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: background 0.3s ease;
+  }
+  
+  .slideshow-overlay-unique .hero-button-unique:hover {
+    background-color: #2A9D8F;
+  }
+  
+  /* Animacion para los sliders */
+  .slide-unique .active {
+    transform: translateX(0);
+  }
+  
+  .slide-unique:not(.active) {
+    transform: translateX(100%);
+  }
+  
+  /* Responsive Design */
+  
+  /* Pantallas pequeñas (320px - 374px) */
+  @media screen and (max-width: 374px) {
+    .hero-container-unique {
+      height: 80vh;
+    }
+    
+    .slideshow-overlay-unique h1 {
+      font-size: 1.2rem;
+    }
+    
+    .slideshow-overlay-unique p {
+      font-size: 0.8rem;
+    }
+    
+    .slideshow-overlay-unique .hero-button-unique {
+      font-size: 0.7rem;
+      padding: 6px 12px;
+    }
+  }
+  
+  /* Pantallas móviles (375px - 599px) */
+  @media screen and (min-width: 375px) and (max-width: 599px) {
+    .hero-container-unique {
+      height: 90vh;
+    }
+  
+    .slideshow-overlay-unique h1 {
+      font-size: 1.5rem;
+    }
+  
+    .slideshow-overlay-unique p {
+      font-size: 0.9rem;
+    }
+  
+    .slideshow-overlay-unique .hero-button-unique {
+      font-size: 0.8rem;
+      padding: 8px 15px;
+    }
+  }
+  
+  /* Pantallas medianas (600px - 1023px) */
+  @media screen and (min-width: 600px) and (max-width: 1023px) {
+    .hero-container-unique {
+      height: 100vh;
+    }
+  
+    .slideshow-overlay-unique h1 {
+      font-size: 2rem;
+    }
+  
+    .slideshow-overlay-unique p {
+      font-size: 1rem;
+    }
+  
+    .slideshow-overlay-unique .hero-button-unique {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+    }
+
+
+  }
+  
+  /* Pantallas grandes (1024px - 1439px) */
+  @media screen and (min-width: 1024px) and (max-width: 1439px) {
+    .hero-container-unique {
+      height: 100vh;
+    }
+  
+    .slideshow-overlay-unique h1 {
+      font-size: 2.5rem;
+    }
+  
+    .slideshow-overlay-unique p {
+      font-size: 1.2rem;
+    }
+  
+    .slideshow-overlay-unique .hero-button-unique {
+      font-size: 1rem;
+      padding: 12px 25px;
+    }
+  }
+  
+  /* Pantallas extra grandes (1440px y superiores) */
+  @media screen and (min-width: 1440px) {
+    .slideshow-overlay-unique h1 {
+      font-size: 3rem;
+    }
+  
+    .slideshow-overlay-unique p {
+      font-size: 1.5rem;
+    }
+  
+    .slideshow-overlay-unique .hero-button-unique {
+      font-size: 1.2rem;
+      padding: 15px 30px;
+    }
+  }
+  
+
+/*  final de Estilos hero 2*/
+
+
+
+
+  
