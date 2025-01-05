@@ -152,7 +152,8 @@ body, html {
   }
   
   .slide-unique {
-    flex: 0 0 100%;
+    flex: 1 0 100%;
+    /* revisar linea de arriba */
     height: 70%;
     transition: transform 1s ease-in-out;
     filter: brightness(70%); /* bajar un poco el brillo de la imagen  */
