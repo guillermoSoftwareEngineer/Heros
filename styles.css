@@ -141,14 +141,14 @@ body, html {
   
   .slideshow-unique {
     background-image: url('./images/fondo.png'); 
-    background-size: cover; /* Asegura que la imagen cubra toda el área */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-attachment: fixed; /* Fija la imagen al viewport */
-    background-position: center; /* Centra la imagen en la pantalla */
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: center; 
     position: absolute;
     display: flex;
     justify-content: center; /* garantiza que los sliders esten a la misma altura del contenedor flex */
-
+    max-height: 180px;
   }
   
   .slide-unique {
@@ -181,7 +181,7 @@ body, html {
   
   .slideshow-overlay-unique p {
     font-size: 0.9rem;
-    color: #F4A261;
+    color: white;
     margin: 10px 0;
   }
   
@@ -236,6 +236,10 @@ body, html {
     .hero-container-unique {
       height: 90vh;
     }
+
+    .slideshow-unique{
+      max-height: 210.94px;
+    }
   
     .slideshow-overlay-unique h1 {
       font-size: 1.5rem;
@@ -255,6 +259,10 @@ body, html {
   @media screen and (min-width: 600px) and (max-width: 1023px) {
     .hero-container-unique {
       height: 100vh;
+    }
+
+    .slideshow-unique{
+      max-height:432px ;
     }
   
     .slideshow-overlay-unique h1 {
@@ -278,6 +286,10 @@ body, html {
     .hero-container-unique {
       height: 100vh;
     }
+
+    .slideshow-unique{
+      max-height: 576px;
+    }
   
     .slideshow-overlay-unique h1 {
       font-size: 2.5rem;
@@ -292,15 +304,52 @@ body, html {
       padding: 12px 25px;
     }
   }
+
+
+  @media screen and (min-width: 1280px) and (max-width: 1440px){
+    .slide-unique video  {
+      margin-left: 2.5%;
+      max-width: 125%;
+    }
+    .slideshow-overlay-unique p {
+      font-size: 1.5rem;
+      text-shadow:4px 4px 0.5 #0D1B2A;
+      color: #ffffff;
+    }
+    .slideshow-unique{
+      max-width: 100%;
+      max-height: 633px;
+      margin-top: 1%;
+    }
+  }
   
   /* Pantallas extra grandes (1440px y superiores) */
   @media screen and (min-width: 1440px) {
     .slideshow-overlay-unique h1 {
       font-size: 3rem;
     }
+
+    .slideshow-unique{
+      max-width: 100%;
+      max-height: 633px;
+      margin-top: 1%;
+    }
+
+    .hero-container-unique{
+      max-height: 633px;
+      max-width: 100%;
+    }
+
+
+    .slide-unique video  {
+      margin-left: 5%;
+      max-width: 125%;
+    }
   
     .slideshow-overlay-unique p {
       font-size: 1.5rem;
+      text-shadow:4px 4px 0.5 #0D1B2A;
+      color: #ffffff;
     }
   
     .slideshow-overlay-unique .hero-button-unique {
@@ -312,7 +361,165 @@ body, html {
 
 /*  final de Estilos hero 2*/
 
+/* Inicio estilos para Hero  3 */
+  
+/* Hero Section Reveal */
+.hero-section-reveal {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(circle, #1e293b, #0f172a); /* Fondo base usando gradientes */
+  z-index: 0;
+}
+
+/* Inicio clases para el particles ajustado con id */
+#hero-section-reveal canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Asegura que quede detrás del contenido */
+  opacity: 0.5; /* Ajusta la transparencia de las partículas */
+}
+/* Final clases para el particles con id */
+
+/* Fondo animado */
+.background-animated {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), transparent 70%);
+  animation: moveBackground 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Contenedor principal */
+.hero-container-reveal {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+  z-index: 1;
+}
+
+.hero-container-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto Máquina de Escribir */
+.hero-title-reveal {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden; 
+  white-space: wrap; /* Mantener texto en dos línea */
+  border-right: 2px solid rgba(255, 255, 255, 0.75); /* Cursor */
+  width: 0; /* Inicialmente no visible */
+}
+
+.typing-active {
+  width: 100%; /* Asegura que el texto permanezca visible después de la animación */
+  animation: typing 4s steps(20, end), blinkCursor 0.7s step-end infinite alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-color: transparent;
+  }
+}
+
+/* Fades para subtítulos y botones */
+.hero-subtitle-reveal {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(20px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.hero-button-reveal {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #00c4cc;
+  color: #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateY(20px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* inicio de clases para hero 3 en tamaño de 425 en adelante */
+
+@media screen and (min-width: 425px) {
+  .hero-title-reveal {
+    white-space: normal; /* Permitir que el texto se divida en dos líneas */
+  }
+}
 
 
+/* inicio de clases para hero 3 en tamaño de 425 en adelante */
+
+
+/* inicio de clases de 1440px en adelante, para el hero 3 */
+
+@media screen and (min-width: 1440px) {
+  .hero-title-reveal {
+    font-size: 4rem; 
+  }
+
+  .hero-subtitle-reveal {
+    font-size: 2rem; 
+  }
+
+  .hero-button-reveal {
+    font-size: 1.2rem; 
+    padding: 1rem 2rem; 
+  }
+}
+
+
+/* inicio de clases de 1440px en adelante, para el hero 3 */
+
+
+/* final estilos para Hero  3 total */
 
   
