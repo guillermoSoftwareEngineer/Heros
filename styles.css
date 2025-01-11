@@ -523,3 +523,258 @@ body, html {
 /* final estilos para Hero  3 total */
 
   
+  
+ /* inicio de clases para hero 4 */
+
+  /* Hero 4 Container */
+.hero-4-container-unique {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 5%;
+  background-color: #00c4cc;
+}
+
+/* Izquierda */
+.hero-4-left-unique {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80%;
+}
+
+.hero-4-img-unique {
+  width: 100%;
+  height: 48%;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.hero-4-img-unique.top {
+  animation-delay: 0.5s;
+}
+
+.hero-4-img-unique.bottom {
+  animation-delay: 1s;
+}
+
+/* Derecha */
+.hero-4-right-unique {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.hero-4-title-unique {
+  font-size: 2.5rem;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-4-subtitle-unique {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.hero-4-button-unique {
+  padding: 10px 20px;
+  background-color: #FFD700;
+  color: #0D1B2A;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.hero-4-button-unique:hover {
+  background-color: #F4A261;
+}
+
+/* Visible State (JS adds this class) */
+.visible-unique {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .hero-4-container-unique {
+      flex-direction: column;
+      padding: 2%;
+  }
+
+  .hero-4-left-unique, .hero-4-right-unique {
+      width: 100%;
+      height: auto;
+  }
+
+  .hero-4-img-unique {
+      height: 40%;
+  }
+
+  .hero-4-title-unique {
+      font-size: 2rem;
+  }
+
+  .hero-4-subtitle-unique {
+      font-size: 1.2rem;
+  }
+
+  .hero-4-button-unique {
+      font-size: 1rem;
+  }
+}
+
+
+/* inicio de end point para reducir espacio entre videos de hero 4 de 320 a 678px */
+
+@media (max-width: 768px) {
+  .hero-4-left-unique {
+    height: 100%; 
+    max-height: 75%;
+    justify-content: flex-start; 
+    gap: 10px; 
+  }
+
+  .hero-4-container-unique {
+    overflow: auto; 
+  }
+}
+
+/* final de end point para reducir espacio entre videos de hero 4 de 320 a 678px */
+
+/* inicio tamaños por encima de 2560px para hero 4 */
+
+@media (min-width: 2560px) {
+  .hero-4-title {
+    font-size: 7rem; 
+  }
+
+  .hero-4-subtitle {
+    font-size: 4rem; 
+  }
+
+  .hero-4-button {
+    font-size: 3rem; 
+    padding: 30px 60px; 
+  }
+}
+
+/* final tamaños por encima de 2560px para hero 4 */
+
+ /* final de clases para hero 4 */
+
+
+/* inicio de clases para el hero 5 Estilos 3D */
+
+.hero-container-3d {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #1e293b, #0f172a);
+  overflow: hidden;
+}
+
+/* Laptop 3D */
+.laptop-3d {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  background: transparent;
+  transform: perspective(800px) rotateX(25deg) rotateY(0deg);
+  transform-origin: bottom center;
+  transition: transform 3s ease-in-out; 
+}
+
+/* Pantalla de la laptop */
+.screen {
+  position: absolute;
+  top: 0;
+  left: 50%; 
+  width: 70%; 
+  height: 70%;
+  background-image: url('./images/laptop-screen.png'); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  transform: translateX(-50%); 
+}
+
+/* Teclado de la laptop */
+.keyboard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  height: 30%; 
+  background-image: url('./images/keyboard.png'); 
+  background-size: contain; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  border-radius: 0 0 10px 10px;
+}
+
+/* Contenido del Hero */
+.hero-content-3d {
+  position: absolute;
+  bottom: 10%;
+  text-align: center;
+}
+
+.hero-title-3d {
+  font-size: 2rem;
+  color: #facc15;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-subtitle-3d {
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.hero-button-3d {
+  display: block;
+  margin: 5% 5% 5% 5%;
+  padding: 10px 20px;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero-button-3d:hover {
+  background: #1d4ed8;
+}
+
+/* Animaciones al hacer scroll */
+.hero-container-3d.scrolled .laptop-3d {
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg); 
+}
+
+/* final de clases para el hero 5 */
+
+
+
+  /* final de clases para el hero 5 estilos 3d*/
